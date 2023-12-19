@@ -36,3 +36,17 @@
     -   在父组件中使用 _useMemo_ 包裹需要使用的子组件返回一个变量，在 return jsx 中使用
 -   若子组件不接受 props
     -   子组件定义时使用 _memo_ api
+
+## 二.组件 props
+
+### as Element
+
+-   用于当不需要在接受组件中修改自身 _props_
+
+### as Component
+
+-   用于需要在接受组件中修改或自定义自身 _props_
+
+### as Function
+
+-   用于需要在接受组件 _props_ 和自身 _props_ 之间选择的情况（相当于默认值和自定义传参）
