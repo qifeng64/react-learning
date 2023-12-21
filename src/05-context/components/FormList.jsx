@@ -3,6 +3,8 @@ import { useFormDate, useFormApi } from "../context/formContext";
 export default function From() {
     const { name } = useFormDate();
     const { onNameChange } = useFormApi();
+
+    console.log("FormList render>>>>>>>>>>>>>>>>>>>");
     return (
         <form action="">
             <label htmlFor="name">name: </label>

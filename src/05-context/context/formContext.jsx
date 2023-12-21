@@ -4,7 +4,6 @@ const FormDataContext = createContext();
 const FormAPIContext = createContext();
 
 const reducer = (state, action) => {
-    console.log("ccccccccccccccccccccccccccccc");
     switch (action.type) {
         case "onSave":
             return;
@@ -17,16 +16,14 @@ const reducer = (state, action) => {
 
 export const FormDataProvider = ({ children }) => {
     const [state, dispath] = useReducer(reducer, { name: "" });
-    console.log(state);
-    console.log("FormDataProvider render>>>>>>>>>>>>>>");
 
+    console.log("FormDataProvider render>>>>>>>>>>>>>>");
     const api = useMemo(() => {
         const onSave = () => {
             // send the request to the backend here
         };
 
         const onNameChange = (e) => {
-            console.log("ccccccccccccccccccccccccccccc", e);
             dispath({ type: "onNameChange", name: e.target.value });
         };
 
@@ -37,8 +34,8 @@ export const FormDataProvider = ({ children }) => {
     }, []);
 
     return (
-        <FormDataContext.Provider value={api}>
-            <FormAPIContext.Provider value={state}>{children}</FormAPIContext.Provider>
+        <FormDataContext.Provider value={state}>
+            <FormAPIContext.Provider value={api}>{children}</FormAPIContext.Provider>
         </FormDataContext.Provider>
     );
 };

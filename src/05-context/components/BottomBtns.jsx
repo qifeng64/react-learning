@@ -3,7 +3,6 @@ export default function BottomBtns() {
     return (
         <div>
             <button>保存</button>
-            <button>重置</button>
         </div>
     );
 }
