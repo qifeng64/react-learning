@@ -1,0 +1,19 @@
+.sidebar {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 240px;
+    background: #fafbfc;
+    border-right: 1px solid #e7e7e7;
+    position: relative;
+}
+
+.sidebar-handle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #02c7e6;
+    border-radius: 50%;
+    top: 5px;
+    right: -10px;
+    user-select: none;
+}

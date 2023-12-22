@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo, useState } from "react";
+import { memo, useCallback, useDebugValue, useMemo, useState } from "react";
 
 function ModalBase({ isOpen, close }) {
     return isOpen ? (
@@ -11,6 +11,8 @@ function ModalBase({ isOpen, close }) {
 
 export const useModal = () => {
     const [isOpen, setIsOpen] = useState(false);
+    // 便于调试，在用到该自定义hooks的组件中，会给该hooks设置一个值，如 Modal: "useDebugValue open"
+    useDebugValue(isOpen ? "useDebugValue open" : "useDebugValue close");
     const open = useCallback(() => setIsOpen(true), []);
     const close = useCallback(() => setIsOpen(false), []);
     const Dialog = useCallback(() => <ModalBase isOpen={isOpen} close={close}></ModalBase>, [isOpen, close]);
